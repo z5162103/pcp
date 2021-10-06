@@ -12,7 +12,7 @@ from Google import Create_Service
 import time
 from os import listdir
 from os.path import isfile, join
-
+import os
 # ====================================== Global variables - Google Drive ======================================
 # Google's client instance
 CLIENT_SECRET_FILE = 'Client_Secret_File.json'
@@ -94,6 +94,11 @@ def screenshot():
         time.sleep(10)
 
 
+try:
+    os.makedirs('screenshots')    
+    print("Make screenshots folder")
+except FileExistsError:
+    print("screenshots already exists")  
 screenshot()
 
 
