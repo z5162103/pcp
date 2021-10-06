@@ -93,12 +93,13 @@ def screenshot():
         send_picture(sshot_name)
         time.sleep(10)
 
-
+# git won't take an empty file. Makes a folder called screenshots 
 try:
     os.makedirs('screenshots')    
     print("Make screenshots folder")
 except FileExistsError:
     print("screenshots already exists")  
+
 screenshot()
 
 
